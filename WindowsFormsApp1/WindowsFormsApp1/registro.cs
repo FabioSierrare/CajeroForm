@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class registro : Form
     {
-        public Form1()
+        public registro()
         {
             InitializeComponent();
         }
 
-        private void btnRegister_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            registro Reg = new registro();
-            Reg.Show();
+            Form1 cancelar = new Form1();
+            cancelar.Show();
             this.Hide();
         }
     }
