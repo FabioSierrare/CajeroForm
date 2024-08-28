@@ -71,7 +71,7 @@ namespace WindowsFormsApp1
                 Realiza.Parameters.AddWithValue("@clave", textnumero.Text);
                 Conexion.Open();
                 Realiza.ExecuteNonQuery();
-                string cadena = "select top 1 * from registrarse order by numero_cuenta desc ";
+                string cadena = "select top 1 * from registrarse order by numero_cuenta desc";
                 SqlCommand comando = new SqlCommand(cadena, Conexion);
                 SqlDataReader registros = comando.ExecuteReader();
                 if (registros.Read())
