@@ -23,5 +23,12 @@ namespace WindowsFormsApp1
             Reg.Show();
             this.Hide();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Hide();
+        }
     }
 }
