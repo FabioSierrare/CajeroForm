@@ -34,14 +34,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtname = new System.Windows.Forms.TextBox();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
+            this.txtEdad = new System.Windows.Forms.TextBox();
+            this.txtDocumento = new System.Windows.Forms.TextBox();
+            this.textnumero = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.txtTipoDocumento = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -98,47 +98,44 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Pin";
             // 
-            // textBox1
+            // txtname
             // 
-            this.textBox1.Location = new System.Drawing.Point(282, 25);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(145, 20);
-            this.textBox1.TabIndex = 6;
+            this.txtname.Location = new System.Drawing.Point(282, 25);
+            this.txtname.Name = "txtname";
+            this.txtname.Size = new System.Drawing.Size(145, 20);
+            this.txtname.TabIndex = 6;
             // 
-            // textBox2
+            // txtFirstName
             // 
-            this.textBox2.Location = new System.Drawing.Point(282, 79);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(145, 20);
-            this.textBox2.TabIndex = 7;
+            this.txtFirstName.Location = new System.Drawing.Point(282, 79);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(145, 20);
+            this.txtFirstName.TabIndex = 7;
             // 
-            // textBox3
+            // txtEdad
             // 
-            this.textBox3.Location = new System.Drawing.Point(282, 137);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(145, 20);
-            this.textBox3.TabIndex = 8;
+            this.txtEdad.Location = new System.Drawing.Point(282, 137);
+            this.txtEdad.Name = "txtEdad";
+            this.txtEdad.Size = new System.Drawing.Size(145, 20);
+            this.txtEdad.TabIndex = 8;
+            this.txtEdad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEdad_KeyPress);
             // 
-            // textBox4
+            // txtDocumento
             // 
-            this.textBox4.Location = new System.Drawing.Point(282, 199);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(145, 20);
-            this.textBox4.TabIndex = 9;
+            this.txtDocumento.Location = new System.Drawing.Point(282, 253);
+            this.txtDocumento.Name = "txtDocumento";
+            this.txtDocumento.Size = new System.Drawing.Size(145, 20);
+            this.txtDocumento.TabIndex = 10;
+            this.txtDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox5_KeyPress);
             // 
-            // textBox5
+            // textnumero
             // 
-            this.textBox5.Location = new System.Drawing.Point(282, 253);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(145, 20);
-            this.textBox5.TabIndex = 10;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(282, 311);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(145, 20);
-            this.textBox6.TabIndex = 11;
+            this.textnumero.Location = new System.Drawing.Point(282, 311);
+            this.textnumero.MaxLength = 6;
+            this.textnumero.Name = "textnumero";
+            this.textnumero.Size = new System.Drawing.Size(145, 20);
+            this.textnumero.TabIndex = 11;
+            this.textnumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textnumero_KeyPress);
             // 
             // button1
             // 
@@ -148,6 +145,7 @@
             this.button1.TabIndex = 12;
             this.button1.Text = "Guardar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -159,19 +157,32 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // txtTipoDocumento
+            // 
+            this.txtTipoDocumento.FormattingEnabled = true;
+            this.txtTipoDocumento.Items.AddRange(new object[] {
+            "TI",
+            "CC",
+            "PP",
+            "CE"});
+            this.txtTipoDocumento.Location = new System.Drawing.Point(282, 202);
+            this.txtTipoDocumento.Name = "txtTipoDocumento";
+            this.txtTipoDocumento.Size = new System.Drawing.Size(145, 21);
+            this.txtTipoDocumento.TabIndex = 14;
+            // 
             // registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtTipoDocumento);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textnumero);
+            this.Controls.Add(this.txtDocumento);
+            this.Controls.Add(this.txtEdad);
+            this.Controls.Add(this.txtFirstName);
+            this.Controls.Add(this.txtname);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -180,6 +191,7 @@
             this.Controls.Add(this.label1);
             this.Name = "registro";
             this.Text = "registro";
+            this.Load += new System.EventHandler(this.registro_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,13 +205,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtname;
+        private System.Windows.Forms.TextBox txtFirstName;
+        private System.Windows.Forms.TextBox txtEdad;
+        private System.Windows.Forms.TextBox txtDocumento;
+        private System.Windows.Forms.TextBox textnumero;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox txtTipoDocumento;
     }
 }
