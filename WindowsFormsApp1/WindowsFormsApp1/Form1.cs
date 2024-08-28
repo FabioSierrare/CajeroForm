@@ -16,5 +16,12 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            registro Reg = new registro();
+            Reg.Show();
+            this.Hide();
+        }
     }
 }
